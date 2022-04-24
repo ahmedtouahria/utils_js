@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<input type="date" id="myDate" value="2022-05-05" />
+<button onclick="myFunction()">Try it</button>
+<div id="display"></div>
+<script>
+Date.prototype.addDays = function (days) {
+    const date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date.getDay()+'-'+date.getMonth()+'-'+date.getFullYear();
+};
+function myFunction() {
+  var x = document.getElementById("myDate").value;
+  var date = new Date(x)
+  document.getElementById("display").innerHTML = date.addDays(133);
+}
+
+</script>
+</body>
+</html>
